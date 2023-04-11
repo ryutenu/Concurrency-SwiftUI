@@ -15,6 +15,8 @@
 		E773D52229E4B13A0069901E /* posts.json in Resources */ = {isa = PBXBuildFile; fileRef = E773D52129E4B13A0069901E /* posts.json */; };
 		E773D52529E4B1FF0069901E /* BundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773D52429E4B1FF0069901E /* BundleExtension.swift */; };
 		E773D52729E4B41E0069901E /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773D52629E4B41E0069901E /* MockData.swift */; };
+		E773D52929E5FCB80069901E /* PostListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773D52829E5FCB80069901E /* PostListViewModel.swift */; };
+		E773D52B29E5FDFF0069901E /* PostListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E773D52A29E5FDFF0069901E /* PostListView.swift */; };
 		E7CF172029E35C1800282EF0 /* Concurrency_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF171F29E35C1800282EF0 /* Concurrency_SwiftUIApp.swift */; };
 		E7CF172229E35C1800282EF0 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CF172129E35C1800282EF0 /* UserListView.swift */; };
 		E7CF172429E35C1900282EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7CF172329E35C1900282EF0 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		E773D52129E4B13A0069901E /* posts.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = posts.json; sourceTree = "<group>"; };
 		E773D52429E4B1FF0069901E /* BundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleExtension.swift; sourceTree = "<group>"; };
 		E773D52629E4B41E0069901E /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		E773D52829E5FCB80069901E /* PostListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewModel.swift; sourceTree = "<group>"; };
+		E773D52A29E5FDFF0069901E /* PostListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListView.swift; sourceTree = "<group>"; };
 		E7CF171C29E35C1800282EF0 /* Concurrency-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Concurrency-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7CF171F29E35C1800282EF0 /* Concurrency_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency_SwiftUIApp.swift; sourceTree = "<group>"; };
 		E7CF172129E35C1800282EF0 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				E7CF172129E35C1800282EF0 /* UserListView.swift */,
+				E773D52A29E5FDFF0069901E /* PostListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				E773D51D29E4AD6D0069901E /* UserListViewModel.swift */,
+				E773D52829E5FCB80069901E /* PostListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -205,7 +211,9 @@
 			files = (
 				E7CF172229E35C1800282EF0 /* UserListView.swift in Sources */,
 				E773D51E29E4AD6D0069901E /* UserListViewModel.swift in Sources */,
+				E773D52929E5FCB80069901E /* PostListViewModel.swift in Sources */,
 				E773D51A29E361080069901E /* APIService.swift in Sources */,
+				E773D52B29E5FDFF0069901E /* PostListView.swift in Sources */,
 				E773D52529E4B1FF0069901E /* BundleExtension.swift in Sources */,
 				E7CF172029E35C1800282EF0 /* Concurrency_SwiftUIApp.swift in Sources */,
 				E773D52729E4B41E0069901E /* MockData.swift in Sources */,

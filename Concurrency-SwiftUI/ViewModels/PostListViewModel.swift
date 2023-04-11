@@ -1,24 +1,27 @@
 //
-//  UserListViewModel.swift
+//  PostListViewModel.swift
 //  Concurrency-SwiftUI
 //
-//  Created by Alan Liu on 2023/04/11.
+//  Created by Alan Liu on 2023/04/12.
 //
 
 import Foundation
 
-class UserListViewModel: ObservableObject {
-    @Published var users: [User] = []
+class PostListViewModel: ObservableObject {
+    @Published var posts: [Post] = []
     @Published var isLoading = false
     @Published var showAlert = false
     @Published var errorMessage: String?
+    var userId: Int?
     
-    func fetchUsers() {
-        let apiService = APIService(urlString: "https://jsonplaceholder.typicode.com/users")
+    func fetchPosts() {
+        guard let userId else { return }
+        
+        let apiService = APIService(urlString: "https://jsonplaceholder.typicode.com/users/\(userId)/posts")
         
         isLoading.toggle()
         
-        apiService.getJSON { (result: Result<[User], APIError>) in
+        apiService.getJSON { (result: Result<[Post], APIError>) in
             defer {
                 DispatchQueue.main.async {
                     self.isLoading.toggle()
@@ -26,9 +29,9 @@ class UserListViewModel: ObservableObject {
             }
             
             switch result {
-            case .success(let users):
+            case .success(let posts):
                 DispatchQueue.main.async {
-                    self.users = users
+                    self.posts = posts
                 }
             case .failure(let error):
                 DispatchQueue.main.async {
@@ -40,12 +43,12 @@ class UserListViewModel: ObservableObject {
     }
 }
 
-extension UserListViewModel {
+extension PostListViewModel {
     convenience init(forPreview: Bool = false) {
         self.init()
         
         if forPreview {
-            users = User.mockUsers
+            posts = Post.mockPosts
         }
     }
 }
