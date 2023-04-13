@@ -14,14 +14,19 @@ struct UserListView: View {
         NavigationStack {
             ScrollView {
                 LazyVStack(alignment: .leading) {
-                    ForEach(vm.users) { user in
+                    ForEach(vm.usersAndPosts) { userAndPost in
                         NavigationLink {
-                            PostListView(userId: user.id)
+                            PostListView(posts: userAndPost.posts)
                         } label: {
                             VStack(alignment: .leading) {
-                                Text(user.name ?? "")
-                                    .font(.title)
-                                Text(user.email ?? "")
+                                HStack {
+                                    Text(userAndPost.user.name ?? "")
+                                        .font(.title)
+                                    Spacer()
+                                    Text("(\(userAndPost.numberOfPosts))")
+                                }
+                                
+                                Text(userAndPost.user.email ?? "")
                                 Rectangle()
                                     .foregroundColor(.gray)
                                     .frame(height: 0.5)
