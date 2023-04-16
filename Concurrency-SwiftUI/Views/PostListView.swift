@@ -12,7 +12,7 @@ struct PostListView: View {
     var userId: Int?
     
     var body: some View {
-        NavigationStack {
+        NavigationView {
             ScrollView {
                 LazyVStack(alignment: .leading) {
                     ForEach(vm.posts) { post in
@@ -30,18 +30,14 @@ struct PostListView: View {
                 }
                 .padding()
             }
-            .overlay(content: {
+            .overlay(Group {
                 if vm.isLoading { ProgressView() }
             })
-            .alert("Application Error", isPresented: $vm.showAlert, actions: {
-                Button("OK") {}
-            }, message: {
-                if let errorMessage = vm.errorMessage {
-                    Text(errorMessage)
-                }
+            .alert(isPresented: $vm.showAlert, content: {
+                Alert(title: Text("Application Error"), message: Text(vm.errorMessage ?? "Something wrong"))
             })
             .navigationTitle("Posts")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.automatic)
             .listStyle(.plain)
             .onAppear {
                 vm.userId = userId
